@@ -74,6 +74,8 @@ def sign_up_by_html(request):
                 info['error'] = 'Пароли не совпадают'
             elif int(age) < 18:
                 info['error'] = 'Вы должны быть старше 18'
+            elif int(age) > 100:
+                info['error'] = 'Люди столько не живут!'
             elif any(buyer.name == username for buyer in buyers):
                 info['error'] = 'Пользователь уже существует'
             else:
